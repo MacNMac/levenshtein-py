@@ -8,3 +8,13 @@ def compare(sub, target, threshold=2): # Adjust the threeshold to any number you
     distance = levenshtein_distance(sub, target)
     return distance <= threshold
 ```
+Or, you can add some additions to levenshtein function:
+```python
+    return (distance <= threshold, distance)
+```
+### Example:
+```python
+if __name__ == "__main__":
+    result = compare("Hello", "help")
+    print(result) # False
+```
